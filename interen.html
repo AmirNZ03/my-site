@@ -1,0 +1,101 @@
+<?php
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="interen.css">
+    <link rel="stylesheet" href="FontAwesome/all.min.css">
+</head>
+<body>
+    <div class="form">
+    <form method="post" >
+        <div class="pp">
+        <h5 class="lp">ورود به سایت</h5>
+    </div>
+    <div class="regi">
+        <p>:نام کاربری</p>
+        <div class="input-group mb-3 lo">
+            <input type="text" name="username" class="form-control" placeholder="نام کاربری خود را وارد کنید" aria-label="Recipient's username" aria-describedby="basic-addon2" id="ll" name="username">
+            <span class="input-group-text" id="basic-addon2"><i class="fa fa-user-plus align-middle ic"></i></span>
+           
+          </div>
+        </div>
+        <div class="regi">
+            <p>:رمز عبور</p>
+          <div class="input-group mb-3 lo">
+            <input type="password" name="password" class="form-control" placeholder="رمز عبور خود را وارد کنید" aria-label="Recipient's username" aria-describedby="basic-addon2" id="pas" name="password">
+           <!-- <button> <i class="fas fa-eye as" id="eye"></i></button> -->
+           <span id="ser"></span>
+           
+            <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock align-middle ic"></i></span>
+            <p id="lo"></p>
+           
+          </div>
+         
+        </div>
+        <div class="rem">
+          <p>یادآوری رمز عبور</p>
+          <input type="radio">
+        </div>
+          <button class="wer" type="submit">ورود</button>
+          <div class="xx">
+          <a href="#">بازیابی رمز عبور</a>
+          <p>رمز عبور خود را فراموش کرده اید؟</p>
+        </div>
+        <div class="xxz">
+          <a href="#">ثبت نام</a>
+          <p>هنوز در سایت ثبت نام نکرده اید؟</p>
+        </div>
+    </form>
+</div>
+<script src="FontAwesome/all.min.js"></script>
+<script>
+  let inp=document.getElementById("pas")
+  let eror=document.getElementById("ser")
+  let psa=document.getElementById("ll")
+  let str=document.getElementById("lo")
+  // let icon=document.getElementById("eye")
+  // icon.addEventListener("click",(e)=>{
+  //   e.preventDefault()
+  //   if(inp.type==="password"){
+  //     inp.type="text"
+  //   }
+  // })
+  psa.addEventListener("keyup",()=>{
+    let sa=psa.value
+    if(sa.length==0||sa.length<5){
+      psa.style.borderColor="red"
+      lo.innerHTML="password is weak"
+      str.style.color="red"
+
+    }
+    else if(sa.length>=5 && sa.length<8){
+      psa.style.borderColor="yellow"
+      lo.innerHTML="password is medium"
+      str.style.color="yellow"
+    }
+    
+    
+    else{
+      psa.style.borderColor="green"
+      lo.innerHTML="password is strong"
+      str.style.color="green"
+    }
+  })
+  inp.addEventListener("keyup",()=>{
+    let name=inp.value
+    if(name.length==0){
+eror.innerHTML="رمز عبور الزامی است"
+    }
+  })
+ 
+  
+</script>
+</body>
+</html>
